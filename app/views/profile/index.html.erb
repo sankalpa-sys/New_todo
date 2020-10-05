@@ -1,0 +1,12 @@
+
+<div class="container my-4">
+  <center>
+   <h3>Username : <%= current_user.username%></h3>
+    <h3>First Name: <%= current_user.firstname%></h3>
+    <h3>Last Name : <%= current_user.lastname%></h3>
+    <h3>Email : <%= current_user.email%></h3><br>
+    <%= link_to 'Edit Profile',edit_user_registration_path, :class => 'btn btn-primary' %>
+
+  </center>
+
+</div>

@@ -3,17 +3,20 @@
   <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark my-1" >
       <div class="col-md-6 px-0">
         <h1 class="display-4 font-italic">This is a simple TODO website</h1>
-        <p class="lead my-3">Keep track of your daily routines. Login to continue.</p>
+        <p class="lead my-3">Keep track of your daily routines. Login to continue.</p><br>
         <div class="container"align="right">
-          <% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-danger') %>
-            <%= link_to('Todo',todos_path, :class =>'btn btn-warning') %>
-            <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-primary' %>
-          <% else %>
-            <a class="btn btn-primary" href="/users/sign_in" role="button">Login</a>
-            <a class="btn btn-success" href="/users/sign_up" role="button">Signup</a>
-          <% end %>
+          <center>
+            <% if user_signed_in? %>
+            <strong>Hello <%= current_user.username%></strong><br><br>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-danger') %>
+              <%= link_to('Todo',todos_path, :class =>'btn btn-warning') %>
+              <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-primary' %>
+            <% else %>
+              <a class="btn btn-primary" href="/users/sign_in" role="button">Login</a>
+              <a class="btn btn-success" href="/users/sign_up" role="button">Signup</a>
+            <% end %>
 
+          </center>
         </div>
 
       </div>
