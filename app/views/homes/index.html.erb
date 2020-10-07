@@ -8,12 +8,12 @@
           <center>
             <% if user_signed_in? %>
             <strong>Hello <%= current_user.username%></strong><br><br>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-danger') %>
-              <%= link_to('Todo',todos_path, :class =>'btn btn-warning') %>
-              <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-primary' %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-outline-danger') %>
+              <%= link_to('Todo',todos_path, :class =>'btn btn-outline-warning') %>
+              <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-outline-info' %>
             <% else %>
-              <a class="btn btn-primary" href="/users/sign_in" role="button">Login</a>
-              <a class="btn btn-success" href="/users/sign_up" role="button">Signup</a>
+              <a class="btn btn-outline-primary" href="/users/sign_in" role="button">Login</a>
+              <a class="btn btn-outline-success" href="/users/sign_up" role="button">Signup</a>
             <% end %>
 
           </center>
