@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>https://sankalpa-todo.herokuapp.com/</title>
+    <title></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -52,11 +52,11 @@
     </nav>
 
     <% if notice %>
-      <p class="alert alert-success" data-dismiss="alert" aria-label="Close"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger" data-dismiss ="alert"><%= alert %></p>
-    <% end %>
+    <p class="alert alert-success" data-dismiss="alert"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger" data-dismiss ="alert"><%= alert %></p>
+  <% end %>
 
       <%= yield %>
       <footer class="footer my-2">
