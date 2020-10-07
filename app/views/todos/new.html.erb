@@ -1,8 +1,8 @@
-<center>
-  <h3>Create a Work</h3>
+<br><center>
+  <h3>Create a Work</h3><br>
   <%= form_with model: @todo do |form| %>
-    <%= form.text_field :title, placeholder: "title" %>
-    <%= form.text_field :description, placeholder: "description" %>
+    <%= form.text_field :title, placeholder: "Title" %>
+    <%= form.text_field :description, placeholder: "Description" %><br><br>
 
     <%= form.submit "Add", :class => "btn btn-success btn-sm" %>
   <% end %>
