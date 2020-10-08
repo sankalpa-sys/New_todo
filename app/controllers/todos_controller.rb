@@ -50,7 +50,7 @@ class TodosController < ApplicationController
     @todo = current_user.todos.find_by_id(params[:id])
     unless @todo
       redirect_to todos_path
-      flash[:alert] = 'Todo task not found.'
+      flash[:alert] = 'ERROR OCCURED'
     end
   end
 end
