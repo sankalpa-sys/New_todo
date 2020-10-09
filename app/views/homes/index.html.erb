@@ -1,25 +1,27 @@
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark my-1 text-center">
+  <div class="col-md-6 px-0">
+    <h1 class=" animate display-4 font-italic mx-auto">TODO App</h1>
+    <center>
+      <p class="animate2 lead my-3 mx-4 px-2">Keep track of your daily routines. Login to continue</p>
+    </center><br>
+    <div class="container" align="right">
+      <center>
+        <% if user_signed_in? %>
+          <strong>Hello
+            <%= current_user.username%></strong><br><br>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-outline-danger') %>
+          <%= link_to('Todo',todos_path, :class =>'btn btn-outline-warning') %>
+          <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-outline-info' %>
+        <% else %>
+          <a class="btn btn-outline-primary" href="/users/sign_in" role="button">Login</a>
+          <a class="btn btn-outline-success" href="/users/sign_up" role="button">Signup</a>
+        <% end %>
 
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark my-1 text-center" >
-      <div class="col-md-6 px-0">
-        <h1 class=" animate display-4 font-italic mx-auto">TODO App</h1>
-        <center><p class="animate2 lead my-3 mx-4 px-2">Keep track of your daily routines. Login to continue</p></center><br>
-        <div class="container"align="right">
-          <center>
-            <% if user_signed_in? %>
-            <strong>Hello <%= current_user.username%></strong><br><br>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-outline-danger') %>
-              <%= link_to('Todo',todos_path, :class =>'btn btn-outline-warning') %>
-              <%= link_to 'Edit user',edit_user_registration_path, :class => 'btn btn-outline-info' %>
-            <% else %>
-              <a class="btn btn-outline-primary" href="/users/sign_in" role="button">Login</a>
-              <a class="btn btn-outline-success" href="/users/sign_up" role="button">Signup</a>
-            <% end %>
-
-          </center>
-        </div>
-
-      </div>
+      </center>
     </div>
+
+  </div>
+</div>
 
 <div class="container">
   <div class="card-deck">
@@ -49,25 +51,28 @@
   </div>
 
 </div>
-  <div class="container my-4">
-    <div class="row">
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?todoapp,coding" alt="">
-        <h2>Safe</h2>
-        <p>You will have your own account. Just signup and your account will be safe. Nobody can add to, update and delete your works.</p>
-        <p></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?program,programmer" alt="">
-        <h2>Reports</h2>
-        <p>If you have any problems regarding this web app. Please send us message through the contact page. </p>
-        <p><a class="btn btn-success" href="messages/new" role="button">Contact »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?technology,laptops" alt="">
-        <h2>Completion</h2>
-        <p>It helps you to complete all your work in desired time.</p>
-      </div><!-- /.col-lg-4 -->
+<div class="container my-4">
+  <div class="row">
+    <div class="col-lg-4">
+      <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?todoapp,coding" alt="">
+      <h2>Safe</h2>
+      <p>You will have your own account. Just signup and your account will be safe. Nobody can add to, update and delete your works.</p>
+      <p></p>
     </div>
-
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?program,programmer" alt="">
+      <h2>Reports</h2>
+      <p>If you have any problems regarding this web app. Please send us message through the contact page.<br><br><a class="btn btn-outline-success btn-sm" href="messages/new" role="button">» Report »</a>
+      </p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="bd-placeholder-img rounded-circle border border-dark" src="https://source.unsplash.com/250x250/?technology,laptops" alt="">
+      <h2>Completion</h2>
+      <p>It helps you to complete all your work in desired time.</p>
+    </div>
+    <!-- /.col-lg-4 -->
   </div>
+
+</div>

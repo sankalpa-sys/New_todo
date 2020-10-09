@@ -16,8 +16,10 @@
   </head>
   <div class="wrap">
     <body>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Todo</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          <i class="fas fa-gem"></i>
+          TODO</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,7 +27,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/homes/aboutme">About Me</a>
@@ -35,40 +38,40 @@
               <a class="nav-link" href="/messages/new">Contact Me</a>
             </li>
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <%=link_to "My Profile", profile_index_path, :class=> "nav-link" %>
-            </li>
+              <li class="nav-item">
+                <%=link_to "My Profile", profile_index_path, :class=> "nav-link" %>
+              </li>
             <%end%>
           </ul>
           <div class="mx-2">
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-outline-danger btn-sm') %>
-    <% else %>
-      <a class="btn btn-outline-primary btn-sm" href="/users/sign_in" role="button">Login</a>
-      <a class="btn btn-outline-success btn-sm" href="/users/sign_up" role="button">Signup</a>
-    <% end %>
-
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure want to logout?"}, :class => 'btn btn-outline-danger btn-sm') %>
+            <% else %>
+              <a class="btn btn-outline-primary btn-sm" href="/users/sign_in" role="button">Login</a>
+              <a class="btn btn-outline-success btn-sm" href="/users/sign_up" role="button">Signup</a>
+            <% end %>
 
           </div>
         </div>
       </nav>
 
       <% if notice %>
-      <p class="alert alert-success" data-dismiss="alert"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger" data-dismiss ="alert"><%= alert %></p>
-    <% end %>
+        <p class="alert alert-success" data-dismiss="alert"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger" data-dismiss="alert"><%= alert %></p>
+      <% end %>
 
     </body>
 
   </div>
-      <%= yield %>
-      <hr>
-      <footer class="footer my-2">
-            <div class="container">
-              <center><span class="text-muted"><strong>&copy Sankalpa Neupane 2020</strong></span></center>
-            </div>
-      </footer>
+  <%= yield %>
+  <footer class="footer">
+    <div class="container text-left">
+      <center><small style="color:black" class="copyright">Copyright &copy 2020 Sankalpa Neupane</small></center>
+    </div>
+    <!--End container-->
+  </footer>
+  <!--End footer 2-->
 
 </html>

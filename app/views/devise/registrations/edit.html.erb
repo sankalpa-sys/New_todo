@@ -7,23 +7,23 @@
     <div class="field">
       <%= f.label :Username%><br />
       <%= f.text_field :username, autofocus: true %>
-    </div>
+    </div><br>
 
     <div class="field">
       <%= f.label :Firstname%><br />
       <%= f.text_field :firstname, autofocus: true %>
-    </div>
+    </div><br>
 
     <div class="field">
       <%= f.label :Lastname%><br />
       <%= f.text_field :lastname, autofocus: true %>
-    </div>
+    </div><br>
 
 
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+    </div><br>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -36,15 +36,15 @@
         <br />
         <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
-    </div>
+    </div><br>
 
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+    </div><br>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :current_password %> <i>(Compulsory)</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div><br>
 
